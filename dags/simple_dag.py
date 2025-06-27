@@ -7,7 +7,9 @@ from cosmos import ProfileConfig
 from cosmos.profiles import SnowflakeUserPasswordProfileMapping
 
 jaffle_shop_path = Path("/usr/local/airflow/dbt/jaffle_shop")
-dbt_executable = Path("/usr/local/airflow/dbt_venv/bin/dbt")
+# dbt_executable = Path("/usr/local/airflow/dbt_venv/bin/dbt")
+dbt_executable = Path("/opt/astro/dbt_venv/bin/dbt")
+
 
 # profile_config = ProfileConfig(
 #     profile_name="airflow_db",
