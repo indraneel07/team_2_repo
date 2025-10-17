@@ -1,10 +1,12 @@
-from airflow.sdk import Asset, DAG
+from airflow.sdk import Asset, DAG, Variable
 from airflow.providers.standard.operators.python import PythonOperator
 test_asset = Asset("my_asset")
 
 with DAG(dag_id="my_producer_dag"):
 
     def my_function(**context):
+        mypassword = Variable.get("mypassword")
+        print(mypassword)
         context["outlet_events"][test_asset].extra = {"my_num": 1233}
 
     my_task = PythonOperator(
